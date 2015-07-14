@@ -19,9 +19,9 @@ $document->add_script( 'alert("hi!");' );
 
 $frag = new FRAGMENT;
 $frag	->div('{"id":"contents"}')
-		->div(1,'{"id":"maintext"}')
-			->table(2,[1])
-				->tr(3,[2])
+		->div('{"id":"maintext"}')
+			->table(2)
+				->tr(3)
 					->td('{"id":"td1","width":300}',[3])->content("cell1")
 					->td('{"id":"td1","width":300}',[3])->content("cell2")
 					->td('{"id":"td1","width":300}',[3])->content("cell3")

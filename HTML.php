@@ -1,7 +1,6 @@
 <?
-/* <!-- copyright */
 /*
- * PHP Database Engine
+ * PHP HTML Engine
  *
  * Copyright (C) 2015 Charles Johannisen
  *
@@ -20,7 +19,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
  */
-/* copyright --> */
 class HTML{
 	
 	const HTML_4_STR = 1;

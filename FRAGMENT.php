@@ -1,7 +1,6 @@
 <?
-/* <!-- copyright */
 /*
- * PHP Database Engine
+ * PHP HTML Engine
  *
  * Copyright (C) 2015 Charles Johannisen
  *
@@ -20,7 +19,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  *
  */
-/* copyright --> */
 class FRAGMENT extends HTML{
 	
 	public $__config = array();
@@ -33,7 +31,7 @@ class FRAGMENT extends HTML{
 	public function __call( $name, $args ){
 		
 		$attributes = array();
-		$addto = 0;
+		$addto = null;
 		$id = null;
 		$content = "";
 		
@@ -56,9 +54,6 @@ class FRAGMENT extends HTML{
 		$element = array( "id"=>$id, "name"=>$name, "attributes"=>$attributes, "content"=>$content, "addto"=>$this->parent_id( $addto ) );
 		$this->__id++;
 		
-		if( $id != null ){
-			$this->__lastid = $this->__id;
-		}
 		
 		if( $this->__id == 0 ){
 			
@@ -74,7 +69,7 @@ class FRAGMENT extends HTML{
 	
 	public function parent_id( $id ){
 		
-		$__id = $this->__lastid;
+		$__id = $this->__id;
 		foreach( $this->__config as $parentid=>$value ){
 			if( is_int($value["id"]) && $id === $value["id"] ){
 				$__id = $parentid;
@@ -107,7 +102,6 @@ class FRAGMENT extends HTML{
 	public function render(){
 		
 		$__list = array();
-		$max = 0;
 		
 		foreach( $this->__config as $id=>$value ){
 			$__list[] = $value['addto'];
